@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Empleado } from './empleado.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'EmpleadosApp';
+  title = 'Lista de Empleados';
+
+
+  empleados:Empleado[]=[
+
+    new Empleado("juan", "diaz", "presidente", 9000),
+    new Empleado("roberto", "gonzales", "director", 7000),
+    new Empleado("martha", "perez", "jefa", 5000),
+    new Empleado("adrian", "condori", "administrativo", 4000),
+  ];
+
+  agregarEmpleado(){
+    let miEmpledado=new Empleado(this.cuadroNombre, this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
+      this.empleados.push(miEmpledado);
+    
+  }
+  cuadroNombre:string="";
+  cuadroApellido:string="";
+  cuadroCargo:string="";
+  cuadroSalario:number=0;
 }
