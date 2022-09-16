@@ -42,10 +42,13 @@ export class EmpledosService {
         empleadoModificado.apellido=empleado.apellido;
         empleadoModificado.cargo=empleado.cargo;
         empleadoModificado.salario=empleado.salario;
+        this.dataService.actualizarEmpleado(indice,empleado);
       }
 
       eliminarEmpleado(indice:number){
         this.empleados.splice(indice,1);
+        this.dataService.eliminarEmpleado(indice);
+        this.dataService.guardarEmpleados(this.empleados);
        // delete(this.empleados[indice]) ;
       }
 }

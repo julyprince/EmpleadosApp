@@ -13,10 +13,23 @@ export class DataService{
     guardarEmpleados(empleados:Empleado[]){
         this.httpClient.put('https://mis-clientes-c46d2-default-rtdb.firebaseio.com/datos.json',empleados).subscribe(
             response=>console.log("se han guardado los empleados: "+response),
-            error=>console.log("Error: "+ error),
-            
-            
+            error=>console.log("Error: "+ error),           
         );
 
+    }
+    actualizarEmpleado(indice:number, empleado:Empleado){
+        let url='https://mis-clientes-c46d2-default-rtdb.firebaseio.com/datos/'+indice +'.json';
+        this.httpClient.put(url,empleado).subscribe(
+            response=>console.log("se ha modificado el empleado: "+response),
+            error=>console.log("Error: "+ error),           
+        );
+    }
+
+    eliminarEmpleado(indice:number){
+        let url='https://mis-clientes-c46d2-default-rtdb.firebaseio.com/datos/'+indice +'.json';
+        this.httpClient.delete(url).subscribe(
+            response=>console.log("se ha eliminado el empleado: "+response),
+            error=>console.log("Error: "+ error),           
+        );
     }
 }
