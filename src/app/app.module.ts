@@ -12,13 +12,17 @@ import { ProyectosComponentsComponent } from './proyectos-components/proyectos-c
 import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 import { ContactoComponentComponent } from './contacto-component/contacto-component.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ActualizarComponentComponent } from './actualizar-component/actualizar-component.component';
 
 const appRoutes:Routes=[
   {path:'', component:HomeComponentComponent},
   {path:'proyectos', component:ProyectosComponentsComponent},
   {path:'quienes', component:QuienesSomosComponent },
-  {path:'contacto', component:ContactoComponentComponent}
-];
+  {path:'contacto', component:ContactoComponentComponent},
+  {path:'quienes', component:QuienesSomosComponent},
+  {path:'actualiza/:id', component:ActualizarComponentComponent},
+]
+;
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +31,8 @@ const appRoutes:Routes=[
     HomeComponentComponent,
     ProyectosComponentsComponent,
     QuienesSomosComponent,
-    ContactoComponentComponent
+    ContactoComponentComponent,
+    ActualizarComponentComponent
   ],
   imports: [
     BrowserModule, FormsModule, 

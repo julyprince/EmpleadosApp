@@ -1,9 +1,11 @@
 <div class="container">
     <div class="row">
       <div class="col">
-        <div>
-         {{indice + 1}}.- {{empleadoLista.nombre}} {{empleadoLista.apellido}}  
+        <div> 
+          <a [routerLink]="['actualiza', indice]">
+          {{indice + 1}}.- {{empleadoLista.nombre}} {{empleadoLista.apellido}}  
           {{empleadoLista.cargo}}  {{empleadoLista.salario}}
+         </a>         
         </div>
         <app-caracteristicasempleado-c
         (caracteristicasempleado)="agregarCaracteristica($event)"

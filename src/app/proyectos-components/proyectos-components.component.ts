@@ -26,8 +26,7 @@ export class ProyectosComponentsComponent implements OnInit {
   this.empleadosServicio.agregarEmpleadoServicio(miEmpledado);
   //this.empleados.push(miEmpledado);
   this.router.navigate(['']);
-  
-}
+  }
 cuadroNombre:string="";
 cuadroApellido:string="";
 cuadroCargo:string="";
