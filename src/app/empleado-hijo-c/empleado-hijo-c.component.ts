@@ -14,5 +14,10 @@ export class EmpleadoHijoCComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  arrayCaracteristicas =[''];
 
+  agregarCaracteristica(nuevaCaracteristica: string){
+    this.arrayCaracteristicas.push(nuevaCaracteristica);
+  }
+  
 }
