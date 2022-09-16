@@ -2,10 +2,15 @@
     <div class="row">
       <div class="col">
         <div> 
-          <a [routerLink]="['actualiza', indice]">
+
           {{indice + 1}}.- {{empleadoLista.nombre}} {{empleadoLista.apellido}}  
           {{empleadoLista.cargo}}  {{empleadoLista.salario}}
-         </a>         
+          <a [routerLink]="['actualiza', indice]" [queryParams]="{accion :'1'}">
+          actualiza
+          </a>  
+          <a [routerLink]="['actualiza', indice]" [queryParams]="{accion :'2'}">
+            elimina
+          </a>        
         </div>
         <app-caracteristicasempleado-c
         (caracteristicasempleado)="agregarCaracteristica($event)"
