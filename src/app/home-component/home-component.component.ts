@@ -13,7 +13,12 @@ export class HomeComponentComponent implements OnInit {
   constructor(private miServicio:ServicioEmpleadosService, private empleadosServicio:EmpledosService) { }
 
   ngOnInit(): void {
-    this.empleados=this.empleadosServicio.empleados;
+    this.empleadosServicio.obtenerEmpleados().subscribe(misEmpleados=>{
+      console.log(misEmpleados);
+      this.empleados=Object.values(misEmpleados);
+      this.empleadosServicio.setEmpleados(this.empleados);
+    });
+    //this.empleados=this.empleadosServicio.empleados;
   }
 
   empleados:Empleado[]=[];

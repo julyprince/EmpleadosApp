@@ -14,6 +14,8 @@ import { ContactoComponentComponent } from './contacto-component/contacto-compon
 import { RouterModule, Routes } from '@angular/router';
 import { ActualizarComponentComponent } from './actualizar-component/actualizar-component.component';
 import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
+import { DataService } from './data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes:Routes=[
   {path:'', component:HomeComponentComponent},
@@ -39,9 +41,13 @@ const appRoutes:Routes=[
   ],
   imports: [
     BrowserModule, FormsModule, 
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
   ],
-  providers: [ServicioEmpleadosService, EmpledosService],
+  providers: [ServicioEmpleadosService, 
+    EmpledosService, 
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
