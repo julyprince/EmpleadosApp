@@ -9,12 +9,12 @@ import { ServicioEmpleadosService } from './servicio-empleados.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'Lista de Empleados';
+  
   constructor(private miServicio:ServicioEmpleadosService, private empleadosServicio:EmpledosService){
     //this.empleados=this.empleadosServicio.empleados;
   }
   ngOnInit(): void {
-    this.empleados=this.empleadosServicio.empleados;
+    
   }
 
   /**empleados:Empleado[]=[
@@ -24,17 +24,5 @@ export class AppComponent implements OnInit{
     new Empleado("martha", "perez", "jefa", 5000),
     new Empleado("adrian", "condori", "administrativo", 4000),
   ];**/
-  empleados:Empleado[]=[];
-
-  agregarEmpleado(){
-    let miEmpledado=new Empleado(this.cuadroNombre, this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
-    //this.miServicio.muestraMensaje("nombre del empleado: "+ miEmpledado.nombre);
-    this.empleadosServicio.agregarEmpleadoServicio(miEmpledado);
-    //this.empleados.push(miEmpledado);
-    
-  }
-  cuadroNombre:string="";
-  cuadroApellido:string="";
-  cuadroCargo:string="";
-  cuadroSalario:number=0;
+  
 }
